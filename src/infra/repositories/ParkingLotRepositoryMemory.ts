@@ -7,13 +7,13 @@ class ParkingLotRepositoryMemory implements ParkingLotRepository {
     parkingLotsArray = [
         {
             code: "shopping",
-            capacity: 100,
+            capacity: 4,
             open_hour: 8,
             close_hour: 22
         },
     ];
     parkedCarsArray: ParkedCar[] = [];
-    saveParkedCard(code: string, plate: string, date: Date): void {
+    saveParkedCar(code: string, plate: string, date: Date): void {
         this.parkedCarsArray.push({ code, plate, date });
     }
     getParkingLot(code: string): Promise<ParkingLot | undefined> {
